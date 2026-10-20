@@ -1,0 +1,583 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Nisha Patel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: open, boxless pages on black with drifting tiny particles; projects are planets, the timeline is a comet trail */
+:root {
+  --space: #08080A;
+  --text: #F5EFF2;
+  --muted: #ABA3A8;
+  --blue: #E0457B;
+  --lavender: #EC6B9A;
+  --purple: #B8235A;
+  --slate: #4A4347;
+  --on-blue: #1A0E13;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --max: 1000px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; padding-inline: 20px;
+  background: var(--space);
+  background-attachment: fixed;
+}
+#space { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+code { font-family: var(--mono); font-size: .9em; color: var(--lavender); }
+.wrap { max-width: var(--max); margin: 0 auto; }
+
+header.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; margin-inline: -20px; padding: 14px 20px; background: rgba(8, 8, 10, 0.6); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--text); text-decoration: none; }
+.nav ul { list-style: none; display: flex; gap: 2px; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav ul a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 12px; border-radius: 999px; }
+.nav ul a:hover { color: var(--text); }
+.nav ul a[aria-current="page"] { color: var(--on-blue); background: var(--blue); }
+
+main, footer { position: relative; z-index: 1; }
+main { padding-block: 0 40px; }
+.view { display: flex; flex-direction: column; gap: 88px; padding-top: 72px; }
+
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.eyebrow.blue { color: var(--blue); }
+.eyebrow.lav { color: var(--lavender); }
+.lede { color: var(--muted); max-width: 62ch; font-size: 17px; }
+
+.hero { display: flex; flex-direction: column; gap: 22px; padding-block: 40px 0; }
+.hero h1 { font-size: clamp(52px, 9vw, 104px); line-height: .95; letter-spacing: -0.03em; }
+.hero h1 span { background: linear-gradient(100deg, var(--text) 30%, var(--lavender) 65%, var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .tag { font-size: clamp(19px, 2.4vw, 24px); max-width: 30ch; line-height: 1.4; }
+.hero .tag em { font-style: normal; color: var(--blue); }
+
+.btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid rgba(229, 234, 245, 0.3); color: var(--text); background: rgba(255, 255, 255, 0.04); cursor: pointer; font-family: var(--body); transition: border-color .2s, box-shadow .2s; }
+.btn:hover { border-color: var(--lavender); box-shadow: 0 0 24px rgba(236, 107, 154, 0.35); }
+.btn.primary { background: var(--blue); color: var(--on-blue); border-color: var(--blue); }
+.btn.primary:hover { box-shadow: 0 0 28px rgba(224, 69, 123, 0.55); }
+
+.facts { display: flex; flex-wrap: wrap; gap: 28px 56px; }
+.fact { display: flex; flex-direction: column; }
+.fact b { font-family: var(--display); font-size: 34px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.fact span { color: var(--muted); font-size: 13px; }
+
+.orb { --c1: var(--blue); --c2: #5a1030; position: relative; width: 120px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; flex-shrink: 0;
+  background: radial-gradient(circle at 32% 28%, rgba(255,220,232,.6) 0, var(--c1) 22%, var(--c2) 68%, #0b0709 100%);
+  box-shadow: 0 0 50px color-mix(in srgb, var(--c1) 45%, transparent), inset -14px -16px 30px rgba(6, 4, 6, .7);
+  animation: drift 7s ease-in-out infinite; }
+.orb.ring::after { content: ""; position: absolute; left: -26%; top: 38%; width: 152%; height: 26%; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--c1) 70%, transparent); transform: rotate(-16deg); }
+.orb.lav { --c1: var(--lavender); --c2: #5a1530; }
+.orb.purple { --c1: #C2306A; --c2: #3d0a20; }
+.orb.ice { --c1: #F08AB0; --c2: #6e1236; }
+.orb.slate { --c1: #c9b8c0; --c2: var(--slate); }
+@keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+.paths { display: flex; flex-direction: column; gap: 36px; }
+.path { display: flex; align-items: center; gap: 32px; text-decoration: none; color: var(--text); }
+.path h2 { font-size: clamp(30px, 4vw, 42px); transition: color .2s; }
+.path p { color: var(--muted); max-width: 52ch; }
+.path .go { font-size: 14px; font-weight: 500; display: inline-block; margin-top: 6px; }
+.path.r .go, .path.r:hover h2 { color: var(--blue); }
+.path.e .go, .path.e:hover h2 { color: var(--lavender); }
+.path > div { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+
+.page-head { display: flex; flex-direction: column; gap: 14px; }
+.page-head h1 { font-size: clamp(38px, 6vw, 60px); line-height: 1.02; letter-spacing: -0.02em; }
+section.block { display: flex; flex-direction: column; gap: 28px; }
+section.block > h2 { font-size: 15px; font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--lavender); }
+
+.interests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.interest h3 { font-size: 20px; margin-bottom: 6px; }
+.interest p { color: var(--muted); }
+
+.case { display: flex; flex-direction: column; gap: 32px; }
+.case-top { display: flex; gap: 36px; align-items: center; }
+.case-top > div { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.case h3 { font-size: clamp(30px, 4vw, 40px); }
+.metrics { display: flex; gap: 40px; flex-wrap: wrap; }
+.metric { display: flex; flex-direction: column; }
+.metric b { font-family: var(--mono); font-size: 30px; font-weight: 500; color: var(--blue); font-variant-numeric: tabular-nums; text-shadow: 0 0 22px rgba(224, 69, 123, .45); }
+.metric span { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+.findings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 48px; }
+.finding { position: relative; padding-left: 26px; display: flex; flex-direction: column; gap: 4px; }
+.finding::before { content: ""; position: absolute; left: 0; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: var(--lavender); box-shadow: 0 0 12px var(--lavender); }
+.finding .kind { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--lavender); }
+.finding h4 { font-size: 18px; }
+.finding p { color: var(--muted); font-size: 15px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--mono); font-size: 12px; padding: 3px 11px; border-radius: 999px; border: 1px solid rgba(229, 234, 245, 0.22); color: var(--muted); }
+.chip.b { border-color: rgba(224, 69, 123, .5); color: var(--blue); }
+.chip.l { border-color: rgba(236, 107, 154, .5); color: var(--lavender); }
+
+.quote { font-family: var(--display); font-size: clamp(24px, 3.2vw, 34px); line-height: 1.3; max-width: 30ch; }
+.quote::before { content: "“"; color: var(--lavender); }
+.quote::after { content: "”"; color: var(--lavender); }
+
+.jobs { position: relative; display: flex; flex-direction: column; gap: 56px; padding-left: 36px; }
+.jobs::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--lavender), var(--blue) 60%, transparent); box-shadow: 0 0 10px rgba(236, 107, 154, .5); }
+.job { position: relative; display: flex; flex-direction: column; gap: 4px; }
+.job::before { content: ""; position: absolute; left: -36px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--text); box-shadow: 0 0 16px 4px var(--lavender); }
+.job .when { font-family: var(--mono); font-size: 13px; color: var(--lavender); }
+.job h3 { font-size: 24px; }
+.job .org { color: var(--muted); }
+.job ul { margin: 10px 0 14px; padding-left: 18px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+
+.projects { display: flex; flex-direction: column; gap: 72px; }
+.proj { display: flex; align-items: center; gap: 44px; }
+.proj:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+.proj:nth-child(even) .chips, .proj:nth-child(even) .links { justify-content: flex-end; }
+.proj > div { display: flex; flex-direction: column; gap: 10px; min-width: 0; flex: 1; }
+.proj h3 { font-size: clamp(26px, 3.4vw, 34px); }
+.proj p { color: var(--muted); max-width: 58ch; }
+.proj:nth-child(even) p { margin-left: auto; }
+.proj .links { display: flex; gap: 18px; font-size: 14px; }
+.proj .links a { color: var(--lavender); }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; }
+.skill h3 { font-family: var(--mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 10px; }
+
+.edu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.edu-card { display: flex; flex-direction: column; gap: 4px; }
+.edu-card h3 { font-size: 24px; }
+.edu-card .meta { color: var(--muted); }
+.edu-card .gpa { font-family: var(--mono); color: var(--blue); font-size: 14px; }
+
+.certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 40px; }
+.cert { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.cert span { font-size: 15px; }
+.cert small { color: var(--muted); font-size: 12px; font-family: var(--mono); text-align: right; flex-shrink: 0; }
+
+.mini { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.mini-card { display: flex; gap: 18px; align-items: flex-start; }
+.mini-card > div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.mini-card .orb { width: 40px; animation-duration: 9s; }
+.mini-card h4 { font-size: 18px; }
+.mini-card p { color: var(--muted); font-size: 15px; }
+
+.coursework { columns: 2; column-gap: 48px; padding: 0; margin: 0; list-style: none; }
+.coursework li { padding: 7px 0; break-inside: avoid; display: flex; justify-content: space-between; gap: 10px; }
+.coursework code { font-size: 12px; color: var(--muted); }
+.coursework .now { color: var(--blue); }
+
+footer { padding-block: 64px 40px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: flex-end; }
+footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
+.contact { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.email { font-family: var(--mono); font-size: 14px; user-select: all; }
+.copied { font-size: 13px; color: var(--blue); }
+
+.rv { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .view { gap: 64px; padding-top: 40px; }
+  .path, .case-top, .proj, .proj:nth-child(even) { flex-direction: column; align-items: flex-start; text-align: left; gap: 20px; }
+  .proj:nth-child(even) .chips, .proj:nth-child(even) .links { justify-content: flex-start; }
+  .proj:nth-child(even) p { margin-left: 0; }
+  .orb { width: 88px; }
+  .interests, .findings, .edu, .mini { grid-template-columns: 1fr; }
+  .coursework { columns: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .orb { animation: none; }
+  .rv { opacity: 1; transform: none; transition: none; }
+}
+</style>
+
+<canvas id="space" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#home">Nisha Patel</a>
+    <nav aria-label="Pages">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="view" id="v-home">
+  <section class="hero">
+    <p class="eyebrow blue">M.S. Software Engineering · George Mason University</p>
+    <h1><span>Nisha Patel</span></h1>
+    <p class="tag">I build LLM and retrieval systems, and I care about <em>knowing when they fail.</em></p>
+    <p class="lede">Before grad school I spent a year shipping real-time messaging infrastructure on Kafka and Kubernetes. Now I work on evaluating RAG systems and making LLM-based software more reliable. I'm applying to PhD programs for Fall 2027 and open to SWE internships.</p>
+    <div class="btns">
+      <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">Research CV</a>
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><b>0.888</b><span>MRR on my RAG eval harness</span></div>
+    <div class="fact"><b>0 / 10</b><span>sandbox escapes in my tester</span></div>
+    <div class="fact"><b>&lt;100 ms</b><span>message latency in production</span></div>
+    <div class="fact"><b>2027</b><span>M.S. expected, PhD intake</span></div>
+  </div>
+
+  <div class="paths">
+    <a class="path r" href="#research">
+      <span class="orb ring ice" aria-hidden="true"></span>
+      <div>
+        <p class="eyebrow blue">For PhD committees and labs</p>
+        <h2>Research</h2>
+        <p>Retrieval failure modes, evaluation methodology, a RAG case study where the bug turned out to be in the test set, and a sandbox-escape tester.</p>
+        <span class="go">Read the research page →</span>
+      </div>
+    </a>
+    <a class="path e" href="#engineering">
+      <span class="orb lav" aria-hidden="true"></span>
+      <div>
+        <p class="eyebrow lav">For recruiters and teams</p>
+        <h2>Engineering</h2>
+        <p>Distributed backend work with Spring Boot, Kafka, and Kubernetes, plus full-stack AI products I built end to end.</p>
+        <span class="go">See experience and projects →</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="view" id="v-research" hidden>
+  <div class="page-head">
+    <p class="eyebrow blue">Research</p>
+    <h1>Making LLM systems measurable and trustworthy</h1>
+    <p class="lede">I'm interested in how LLM-based systems fail and how we can tell. Most of what I've learned so far came from building systems and then measuring them carefully enough to see where they broke. I want to develop this into a research direction through doctoral training.</p>
+  </div>
+
+  <section class="block">
+    <h2>Interests</h2>
+    <div class="interests">
+      <div class="interest"><h3>Retrieval failure modes</h3><p>Why retrieval-augmented generation misses relevant passages, and how chunking, embeddings, and ranking each contribute.</p></div>
+      <div class="interest"><h3>Evaluation methodology</h3><p>Building test sets and metrics we can trust, including checking whether the measurement itself is wrong.</p></div>
+      <div class="interest"><h3>LLMs for software engineering</h3><p>Code generation, testing, debugging, and program repair, and how reliable those tools really are.</p></div>
+      <div class="interest"><h3>Trustworthy and agentic systems</h3><p>Interactive LLM systems that act on their own, and how to make their behavior predictable and safe.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Case study · Retrieval</h2>
+    <article class="case">
+      <div class="case-top">
+        <span class="orb ring ice" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">Independent · 2025 – present</p>
+          <h3>Course RAG Tutor</h3>
+          <p class="lede">A question-answering system over course PDFs with a measured evaluation harness, so retrieval changes are compared with numbers instead of judged by eye.</p>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>0.888</b><span>MRR</span></div>
+        <div class="metric"><b>25</b><span>eval questions</span></div>
+        <div class="metric"><b>P@K · R@K</b><span>also tracked</span></div>
+      </div>
+      <div class="findings">
+        <div class="finding"><span class="kind">Retrieval failure</span><h4>Chunking diluted a key sentence</h4><p>A distinct sentence shared a chunk with unrelated boilerplate, so its embedding drifted and retrieval missed it. The cause was the chunk boundary, not the retriever.</p></div>
+        <div class="finding"><span class="kind">Measurement failure</span><h4>The eval set was wrong</h4><p>A date-format keyword mismatch made correct answers score as misses. Some apparent system failures came from the test instrument.</p></div>
+        <div class="finding"><span class="kind">Index contamination</span><h4>Duplicate chunks pushed results down</h4><p>Non-idempotent ingestion added copies of chunks. A uniqueness constraint on filename and course fixed it for good.</p></div>
+        <div class="finding"><span class="kind">Method</span><h4>Hybrid retrieval with RRF</h4><p>Combined pgvector similarity with Postgres full-text search through Reciprocal Rank Fusion to recover exact-term matches.</p></div>
+      </div>
+      <div class="chips"><span class="chip b">RAG</span><span class="chip b">pgvector · HNSW</span><span class="chip b">Gemini embeddings</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span></div>
+      <div class="btns"><a class="btn" href="https://github.com/Nisha1321" target="_blank" rel="noopener">View code</a></div>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2>Case study · Security evaluation</h2>
+    <article class="case">
+      <div class="case-top">
+        <span class="orb purple" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">Independent · Python</p>
+          <h3>Sandbox Escape Finder</h3>
+          <p class="lede">A tool that tests how well RestrictedPython holds up against known Python sandbox-escape techniques, combining static analysis with dynamic probing so each flag is backed by evidence.</p>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>10/10</b><span>attacks flagged</span></div>
+        <div class="metric"><b>0</b><span>escapes</span></div>
+        <div class="metric"><b>17</b><span>tests</span></div>
+      </div>
+      <div class="findings">
+        <div class="finding"><span class="kind">Static analysis</span><h4>Five AST detectors, one tree walk</h4><p>Flags <code>__subclasses__</code> traversal, <code>__globals__</code> and closure access, builtins reloads, frame introspection, and format-string attribute access.</p></div>
+        <div class="finding"><span class="kind">Dynamic oracle</span><h4>Three independent escape signals</h4><p>A canary file outside the sandbox, a per-payload secret, and denylisted module loads. Any one of them confirms an escape.</p></div>
+        <div class="finding"><span class="kind">Result</span><h4>Flagged, but contained</h4><p>Against RestrictedPython 8.5 with default guards, all 10 attack payloads were flagged and none escaped. Eight were blocked at compile time, two at runtime. Two payloads trace back to CVE-2023-37271 and CVE-2023-41039.</p></div>
+        <div class="finding"><span class="kind">Known limit</span><h4>Runtime-built strings slip past</h4><p>The format-string detector only reads literals, so a format string assembled at runtime would not be caught statically.</p></div>
+      </div>
+      <div class="chips"><span class="chip b">AST analysis</span><span class="chip b">Dynamic probing</span><span class="chip b">Test oracles</span><span class="chip">Python</span><span class="chip">RestrictedPython</span><span class="chip">pytest</span></div>
+      <div class="btns"><a class="btn" href="https://github.com/Nisha1321/sandbox-escape-finder" target="_blank" rel="noopener">View code</a></div>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2>What I want to work on next</h2>
+    <p class="quote">How do we know an LLM system is working, and how do we catch it when the evaluation itself is misleading?</p>
+    <p class="lede">I'm currently exploring language bias in multilingual retrieval and failure modes of retrieval-augmented systems, with a focus on evaluation methods that hold up across languages and domains.</p>
+  </section>
+
+  <section class="block">
+    <h2>Relevant coursework</h2>
+    <ul class="coursework">
+      <li><span>Advanced Natural Language Processing</span><code class="now">CS 678 · now</code></li>
+      <li><span>Software Testing</span><code class="now">SWE 637 · now</code></li>
+      <li><span>Theory and Application of Data Mining</span><code>CS 584</code></li>
+      <li><span>Software Modeling and Architecture Design</span><code>SWE 621</code></li>
+      <li><span>Object-Oriented Specification and Construction</span><code>SWE 619</code></li>
+      <li><span>User Interface Design and Development</span><code>SWE 632</code></li>
+      <li><span>Software Engineering for the Web</span><code>SWE 642</code></li>
+      <li><span>Software Project Management</span><code>SWE 625</code></li>
+    </ul>
+  </section>
+</div>
+
+<div class="view" id="v-engineering" hidden>
+  <div class="page-head">
+    <p class="eyebrow lav">Engineering</p>
+    <h1>Backend systems and full-stack AI products</h1>
+    <p class="lede">I've built real-time messaging at scale, a facial-recognition access system, and AI products from the database up. Looking for SWE internships and full-time roles.</p>
+    <div class="btns"><a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download resume</a></div>
+  </div>
+
+  <section class="block">
+    <h2>Experience</h2>
+    <div class="jobs">
+      <div class="job">
+        <span class="when">2024 – 2025</span>
+        <h3>Software Engineer</h3>
+        <p class="org">Ekaantik Software Solutions</p>
+        <ul>
+          <li>Led development of a production communication platform on Spring Boot, React, Kafka, Docker, and Kubernetes.</li>
+          <li>Built a WebSocket chat engine on MongoDB with threading and read receipts, keeping latency under 100 ms.</li>
+          <li>Wrote REST APIs with JWT auth, role-based access control, and rate limiting.</li>
+          <li>Managed Kubernetes manifests for zero-downtime deploys, CI/CD, and horizontal pod autoscaling.</li>
+        </ul>
+        <div class="chips"><span class="chip l">Spring Boot</span><span class="chip l">Kafka</span><span class="chip l">Kubernetes</span><span class="chip">WebSockets</span><span class="chip">MongoDB</span><span class="chip">React</span></div>
+      </div>
+      <div class="job">
+        <span class="when">2023</span>
+        <h3>Data Science Intern</h3>
+        <p class="org">Stat Modeller</p>
+        <ul>
+          <li>Built FaceSense, a visitor-recognition system for real-time facial-recognition access control used by enterprise clients.</li>
+          <li>Developed a Node.js REST API with paginated endpoints, event-driven logging, and sub-second analytics.</li>
+          <li>Designed a MongoDB Atlas cluster with compound indexes and TTL policies for multi-tenant data.</li>
+          <li>Wrote an OpenCV pipeline for live face detection from IP camera streams.</li>
+        </ul>
+        <div class="chips"><span class="chip l">Node.js</span><span class="chip l">OpenCV</span><span class="chip">MongoDB Atlas</span><span class="chip">React</span><span class="chip">Vercel</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="proj">
+        <span class="orb lav ring" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">Full stack · AI</p>
+          <h3>Interview AI</h3>
+          <p>An interview prep platform with a voice-based AI interviewer, resume parsing, a salary negotiation simulator, and in-browser coding with Judge0 across three difficulty levels.</p>
+          <div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Gemini</span><span class="chip">Web Speech API</span></div>
+          <div class="links"><a href="https://github.com/Nisha1321" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+      <article class="proj">
+        <span class="orb ice" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">Retrieval · Backend</p>
+          <h3>Course RAG Tutor</h3>
+          <p>Hybrid search over course PDFs with pgvector and full-text search merged by RRF, streaming cited answers, multi-turn memory, and swappable embedding providers.</p>
+          <div class="chips"><span class="chip">Next.js</span><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">Gemini</span></div>
+          <div class="links"><a href="https://github.com/Nisha1321" target="_blank" rel="noopener">Code</a><a href="#research">Research write-up</a></div>
+        </div>
+      </article>
+      <article class="proj">
+        <span class="orb purple ring" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">Security · Python</p>
+          <h3>Sandbox Escape Finder</h3>
+          <p>Static AST detectors plus a dynamic prober that tests RestrictedPython against known escape techniques. An oracle confirms escapes with three independent signals. 17 tests, deterministic runs.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">AST</span><span class="chip">pytest</span><span class="chip">RestrictedPython</span></div>
+          <div class="links"><a href="https://github.com/Nisha1321/sandbox-escape-finder" target="_blank" rel="noopener">Code</a><a href="#research">Research write-up</a></div>
+        </div>
+      </article>
+      <article class="proj">
+        <span class="orb slate" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">Computer vision · Product</p>
+          <h3>FaceSense</h3>
+          <p>Real-time visitor recognition and access control, from IP camera streams through an OpenCV pipeline to a React dashboard. Built at Stat Modeller.</p>
+          <div class="chips"><span class="chip">OpenCV</span><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">MongoDB Atlas</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">C</span><span class="chip">C++</span></div></div>
+      <div class="skill"><h3>Backend</h3><div class="chips"><span class="chip">Spring Boot</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Kafka</span><span class="chip">WebSockets</span><span class="chip">REST</span><span class="chip">TCP/IP sockets</span></div></div>
+      <div class="skill"><h3>LLM and retrieval</h3><div class="chips"><span class="chip">RAG</span><span class="chip">Hybrid search</span><span class="chip">Embeddings</span><span class="chip">Retrieval eval</span></div></div>
+      <div class="skill"><h3>Cloud and DevOps</h3><div class="chips"><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">CI/CD</span><span class="chip">Grafana</span><span class="chip">Prometheus</span></div></div>
+      <div class="skill"><h3>Data</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">MySQL</span><span class="chip">MongoDB</span></div></div>
+      <div class="skill"><h3>Frontend</h3><div class="chips"><span class="chip">React</span><span class="chip">Redux</span><span class="chip">Next.js</span><span class="chip">Tailwind</span></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="view" id="v-about" hidden>
+  <div class="page-head">
+    <p class="eyebrow">About</p>
+    <h1>A bit more about me</h1>
+    <p class="lede">I studied computer engineering in India, then worked as a backend engineer before coming to George Mason for my master's. Building production systems taught me how often software looks fine until you measure it, and that's what pulled me toward research on LLM reliability. I'm looking for work that answers a real question and also solves a real-world problem.</p>
+  </div>
+
+  <section class="block">
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="edu-card"><p class="eyebrow">2025 – 2027 (expected)</p><h3>M.S. Software Engineering</h3><p class="meta">George Mason University, Fairfax, VA</p><p class="gpa">GPA 3.67 / 4.00</p></div>
+      <div class="edu-card"><p class="eyebrow">2020 – 2024</p><h3>B.E. Computer Engineering</h3><p class="meta">CVM University, India</p><p class="gpa">CGPA 9.04 / 10</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Earlier projects</h2>
+    <div class="mini">
+      <div class="mini-card"><span class="orb lav" aria-hidden="true"></span><div><h4>Emotion-aware music recommendation</h4><p>A CNN reads facial expression from the webcam and recommends Spotify tracks that match the mood.</p></div></div>
+      <div class="mini-card"><span class="orb ice" aria-hidden="true"></span><div><h4>Drug recommendation and disease prediction</h4><p>NLP over drug reviews with Naive Bayes and Passive Aggressive classifiers, reaching 92.3% accuracy.</p></div></div>
+      <div class="mini-card"><span class="orb slate" aria-hidden="true"></span><div><h4>Loan status prediction</h4><p>Compared five classifiers in scikit-learn and deployed the best model on Streamlit.</p></div></div>
+      <div class="mini-card"><span class="orb purple" aria-hidden="true"></span><div><h4>Twitter data analysis</h4><p>Exploratory analysis of sentiment and engagement, presented as Power BI dashboards.</p></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Certifications</h2>
+    <div class="certs">
+      <div class="cert"><span>Analysis of Algorithms</span><small>Princeton</small></div>
+      <div class="cert"><span>Introduction to Graph Theory</span><small>UC San Diego</small></div>
+      <div class="cert"><span>Discrete Mathematics for CS</span><small>Coursera</small></div>
+      <div class="cert"><span>Introduction to SQL</span><small>U. Michigan</small></div>
+      <div class="cert"><span>Methods and Statistics in Social Sciences</span><small>U. Amsterdam</small></div>
+      <div class="cert"><span>Introduction to Cloud Computing</span><small>IBM</small></div>
+      <div class="cert"><span>Introduction to DevOps</span><small>IBM</small></div>
+      <div class="cert"><span>Linux Commands and Shell Scripting</span><small>IBM</small></div>
+      <div class="cert"><span>Core Java Specialization</span><small>LearnQuest</small></div>
+      <div class="cert"><span>C Programming with Linux</span><small>Specialization</small></div>
+      <div class="cert"><span>C: Pointers and Memory Management</span><small>Coursera</small></div>
+      <div class="cert"><span>C: Advanced Data Types</span><small>Coursera</small></div>
+      <div class="cert"><span>Responsive Web Pages with HTML5 and CSS3</span><small>NIIT</small></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <h2>Let's talk</h2>
+      <p style="color:var(--muted);">Fairfax, Virginia</p>
+    </div>
+    <div class="contact">
+      <span class="email" id="email">npatel61@gmu.edu</span>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Nisha1321" target="_blank" rel="noopener">GitHub</a>
+      <span class="copied" id="copied" hidden>Copied</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var views = ["home", "research", "engineering", "about"];
+  function show() {
+    var h = (location.hash || "#home").slice(1);
+    if (views.indexOf(h) < 0) h = "home";
+    views.forEach(function (v) { document.getElementById("v-" + v).hidden = v !== h; });
+    document.querySelectorAll(".nav ul a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", show);
+  show();
+
+  var ok = document.getElementById("copied");
+  document.getElementById("copy").addEventListener("click", function () {
+    var el = document.getElementById("email");
+    function done() { ok.hidden = false; setTimeout(function () { ok.hidden = true; }, 1600); }
+    function select() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    try { navigator.clipboard.writeText(el.textContent).then(done, select); } catch (e) { select(); }
+  });
+
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var cv = document.getElementById("space"), ctx = cv.getContext("2d");
+  var W, H, dpr, ps = [], mx = 0, my = 0;
+  function size() {
+    dpr = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.round(W * H / (W < 700 ? 5200 : 3600));
+    ps = [];
+    for (var i = 0; i < n; i++) {
+      var pink = Math.random() < 0.35;
+      ps.push({ x: Math.random() * W, y: Math.random() * H, z: 0.3 + Math.random() * 0.7,
+        r: pink ? 0.6 + Math.random() * 1.1 : 0.4 + Math.random() * 0.8,
+        vx: (Math.random() - 0.5) * 0.08, vy: -0.03 - Math.random() * 0.12,
+        c: pink ? "224,69,123" : "245,239,242", tw: Math.random() * 6.28 });
+    }
+  }
+  function draw(now) {
+    ctx.clearRect(0, 0, W, H);
+    var sy = scrollY;
+    for (var i = 0; i < ps.length; i++) {
+      var p = ps[i];
+      if (!reduce) {
+        p.x += p.vx * p.z; p.y += p.vy * p.z;
+        if (p.y < -4) { p.y = H + 4; p.x = Math.random() * W; }
+        if (p.x < -4) p.x = W + 4; else if (p.x > W + 4) p.x = -4;
+      }
+      var x = p.x + mx * 14 * p.z, y = ((p.y - sy * 0.12 * p.z) % H + H) % H + my * 14 * p.z;
+      var a = (0.35 + 0.45 * p.z) * (reduce ? 1 : 0.65 + 0.35 * Math.sin(now * 0.0015 + p.tw));
+      ctx.fillStyle = "rgba(" + p.c + "," + a + ")";
+      ctx.beginPath(); ctx.arc(x, y, p.r * p.z + 0.2, 0, 6.283); ctx.fill();
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  addEventListener("pointermove", function (e) { mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5; });
+  addEventListener("resize", function () { size(); if (reduce) draw(0); });
+  addEventListener("scroll", function () { if (reduce) draw(0); }, { passive: true });
+  size();
+  if (reduce) draw(0); else requestAnimationFrame(draw);
+
+  if ("IntersectionObserver" in window && !reduce) {
+    var sel = ".hero > *, .fact, .path, .page-head > *, section.block > h2, .interest, .case-top, .metrics, .finding, .quote, .job, .proj, .skill, .edu-card, .mini-card, .cert, .coursework li";
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(sel).forEach(function (el) {
+      var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.style.transitionDelay = Math.min(i, 5) * 80 + "ms";
+      el.classList.add("rv"); io.observe(el);
+    });
+  }
+})();
+</script>
+
+</body></html>
