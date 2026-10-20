@@ -1,5 +1,13 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+
+Index · HTML
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nisha Patel</title>
+<meta name="description" content="Nisha Patel: M.S. Software Engineering at George Mason. LLM reliability, retrieval evaluation, and backend systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -20,6 +28,7 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0; color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; padding-inline: 20px;
@@ -33,7 +42,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; text-wrap: balan
 p { margin: 0; }
 code { font-family: var(--mono); font-size: .9em; color: var(--lavender); }
 .wrap { max-width: var(--max); margin: 0 auto; }
-
+ 
 header.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; margin-inline: -20px; padding: 14px 20px; background: rgba(8, 8, 10, 0.6); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .brand { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--text); text-decoration: none; }
@@ -41,33 +50,35 @@ header.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; 
 .nav ul a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 12px; border-radius: 999px; }
 .nav ul a:hover { color: var(--text); }
 .nav ul a[aria-current="page"] { color: var(--on-blue); background: var(--blue); }
-
+ 
 main, footer { position: relative; z-index: 1; }
 main { padding-block: 0 40px; }
 .view { display: flex; flex-direction: column; gap: 88px; padding-top: 72px; }
-
+ 
 .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.hero > .eyebrow, .page-head > .eyebrow { font-size: clamp(14px, 1.6vw, 17px); letter-spacing: 0.12em; }
+.path .eyebrow, .case .eyebrow, .proj .eyebrow { font-size: 13px; }
 .eyebrow.blue { color: var(--blue); }
 .eyebrow.lav { color: var(--lavender); }
 .lede { color: var(--muted); max-width: 62ch; font-size: 17px; }
-
+ 
 .hero { display: flex; flex-direction: column; gap: 22px; padding-block: 40px 0; }
 .hero h1 { font-size: clamp(52px, 9vw, 104px); line-height: .95; letter-spacing: -0.03em; }
 .hero h1 span { background: linear-gradient(100deg, var(--text) 30%, var(--lavender) 65%, var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero .tag { font-size: clamp(19px, 2.4vw, 24px); max-width: 30ch; line-height: 1.4; }
 .hero .tag em { font-style: normal; color: var(--blue); }
-
+ 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid rgba(229, 234, 245, 0.3); color: var(--text); background: rgba(255, 255, 255, 0.04); cursor: pointer; font-family: var(--body); transition: border-color .2s, box-shadow .2s; }
 .btn:hover { border-color: var(--lavender); box-shadow: 0 0 24px rgba(236, 107, 154, 0.35); }
 .btn.primary { background: var(--blue); color: var(--on-blue); border-color: var(--blue); }
 .btn.primary:hover { box-shadow: 0 0 28px rgba(224, 69, 123, 0.55); }
-
+ 
 .facts { display: flex; flex-wrap: wrap; gap: 28px 56px; }
 .fact { display: flex; flex-direction: column; }
 .fact b { font-family: var(--display); font-size: 34px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
 .fact span { color: var(--muted); font-size: 13px; }
-
+ 
 .orb { --c1: var(--blue); --c2: #5a1030; position: relative; width: 120px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; flex-shrink: 0;
   background: radial-gradient(circle at 32% 28%, rgba(255,220,232,.6) 0, var(--c1) 22%, var(--c2) 68%, #0b0709 100%);
   box-shadow: 0 0 50px color-mix(in srgb, var(--c1) 45%, transparent), inset -14px -16px 30px rgba(6, 4, 6, .7);
@@ -78,7 +89,7 @@ main { padding-block: 0 40px; }
 .orb.ice { --c1: #F08AB0; --c2: #6e1236; }
 .orb.slate { --c1: #c9b8c0; --c2: var(--slate); }
 @keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
+ 
 .paths { display: flex; flex-direction: column; gap: 36px; }
 .path { display: flex; align-items: center; gap: 32px; text-decoration: none; color: var(--text); }
 .path h2 { font-size: clamp(30px, 4vw, 42px); transition: color .2s; }
@@ -87,16 +98,16 @@ main { padding-block: 0 40px; }
 .path.r .go, .path.r:hover h2 { color: var(--blue); }
 .path.e .go, .path.e:hover h2 { color: var(--lavender); }
 .path > div { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-
+ 
 .page-head { display: flex; flex-direction: column; gap: 14px; }
 .page-head h1 { font-size: clamp(38px, 6vw, 60px); line-height: 1.02; letter-spacing: -0.02em; }
 section.block { display: flex; flex-direction: column; gap: 28px; }
 section.block > h2 { font-size: 15px; font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--lavender); }
-
+ 
 .interests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
 .interest h3 { font-size: 20px; margin-bottom: 6px; }
 .interest p { color: var(--muted); }
-
+ 
 .case { display: flex; flex-direction: column; gap: 32px; }
 .case-top { display: flex; gap: 36px; align-items: center; }
 .case-top > div { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
@@ -111,16 +122,16 @@ section.block > h2 { font-size: 15px; font-family: var(--mono); font-weight: 500
 .finding .kind { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--lavender); }
 .finding h4 { font-size: 18px; }
 .finding p { color: var(--muted); font-size: 15px; }
-
+ 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font-family: var(--mono); font-size: 12px; padding: 3px 11px; border-radius: 999px; border: 1px solid rgba(229, 234, 245, 0.22); color: var(--muted); }
 .chip.b { border-color: rgba(224, 69, 123, .5); color: var(--blue); }
 .chip.l { border-color: rgba(236, 107, 154, .5); color: var(--lavender); }
-
+ 
 .quote { font-family: var(--display); font-size: clamp(24px, 3.2vw, 34px); line-height: 1.3; max-width: 30ch; }
 .quote::before { content: "“"; color: var(--lavender); }
 .quote::after { content: "”"; color: var(--lavender); }
-
+ 
 .jobs { position: relative; display: flex; flex-direction: column; gap: 56px; padding-left: 36px; }
 .jobs::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--lavender), var(--blue) 60%, transparent); box-shadow: 0 0 10px rgba(236, 107, 154, .5); }
 .job { position: relative; display: flex; flex-direction: column; gap: 4px; }
@@ -129,7 +140,7 @@ section.block > h2 { font-size: 15px; font-family: var(--mono); font-weight: 500
 .job h3 { font-size: 24px; }
 .job .org { color: var(--muted); }
 .job ul { margin: 10px 0 14px; padding-left: 18px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
-
+ 
 .projects { display: flex; flex-direction: column; gap: 72px; }
 .proj { display: flex; align-items: center; gap: 44px; }
 .proj:nth-child(even) { flex-direction: row-reverse; text-align: right; }
@@ -140,43 +151,43 @@ section.block > h2 { font-size: 15px; font-family: var(--mono); font-weight: 500
 .proj:nth-child(even) p { margin-left: auto; }
 .proj .links { display: flex; gap: 18px; font-size: 14px; }
 .proj .links a { color: var(--lavender); }
-
+ 
 .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; }
 .skill h3 { font-family: var(--mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 10px; }
-
+ 
 .edu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
 .edu-card { display: flex; flex-direction: column; gap: 4px; }
 .edu-card h3 { font-size: 24px; }
 .edu-card .meta { color: var(--muted); }
 .edu-card .gpa { font-family: var(--mono); color: var(--blue); font-size: 14px; }
-
+ 
 .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 40px; }
 .cert { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
 .cert span { font-size: 15px; }
 .cert small { color: var(--muted); font-size: 12px; font-family: var(--mono); text-align: right; flex-shrink: 0; }
-
+ 
 .mini { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
 .mini-card { display: flex; gap: 18px; align-items: flex-start; }
 .mini-card > div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .mini-card .orb { width: 40px; animation-duration: 9s; }
 .mini-card h4 { font-size: 18px; }
 .mini-card p { color: var(--muted); font-size: 15px; }
-
+ 
 .coursework { columns: 2; column-gap: 48px; padding: 0; margin: 0; list-style: none; }
 .coursework li { padding: 7px 0; break-inside: avoid; display: flex; justify-content: space-between; gap: 10px; }
 .coursework code { font-size: 12px; color: var(--muted); }
 .coursework .now { color: var(--blue); }
-
+ 
 footer { padding-block: 64px 40px; }
 footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: flex-end; }
 footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
 .contact { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .email { font-family: var(--mono); font-size: 14px; user-select: all; }
 .copied { font-size: 13px; color: var(--blue); }
-
+ 
 .rv { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
 .rv.in { opacity: 1; transform: none; }
-
+ 
 @media (max-width: 760px) {
   .view { gap: 64px; padding-top: 40px; }
   .path, .case-top, .proj, .proj:nth-child(even) { flex-direction: column; align-items: flex-start; text-align: left; gap: 20px; }
@@ -192,9 +203,11 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
   .rv { opacity: 1; transform: none; transition: none; }
 }
 </style>
-
+</head>
+<body>
+ 
 <canvas id="space" aria-hidden="true"></canvas>
-
+ 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#home">Nisha Patel</a>
@@ -208,9 +221,9 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     </nav>
   </div>
 </header>
-
+ 
 <main class="wrap">
-
+ 
 <div class="view" id="v-home">
   <section class="hero">
     <p class="eyebrow blue">M.S. Software Engineering · George Mason University</p>
@@ -222,14 +235,14 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </section>
-
+ 
   <div class="facts">
     <div class="fact"><b>0.888</b><span>MRR on my RAG eval harness</span></div>
     <div class="fact"><b>0 / 10</b><span>sandbox escapes in my tester</span></div>
     <div class="fact"><b>&lt;100 ms</b><span>message latency in production</span></div>
     <div class="fact"><b>2027</b><span>M.S. expected, PhD intake</span></div>
   </div>
-
+ 
   <div class="paths">
     <a class="path r" href="#research">
       <span class="orb ring ice" aria-hidden="true"></span>
@@ -251,14 +264,14 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     </a>
   </div>
 </div>
-
+ 
 <div class="view" id="v-research" hidden>
   <div class="page-head">
     <p class="eyebrow blue">Research</p>
     <h1>Making LLM systems measurable and trustworthy</h1>
     <p class="lede">I'm interested in how LLM-based systems fail and how we can tell. Most of what I've learned so far came from building systems and then measuring them carefully enough to see where they broke. I want to develop this into a research direction through doctoral training.</p>
   </div>
-
+ 
   <section class="block">
     <h2>Interests</h2>
     <div class="interests">
@@ -268,7 +281,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       <div class="interest"><h3>Trustworthy and agentic systems</h3><p>Interactive LLM systems that act on their own, and how to make their behavior predictable and safe.</p></div>
     </div>
   </section>
-
+ 
   <section class="block">
     <h2>Case study · Retrieval</h2>
     <article class="case">
@@ -295,7 +308,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       <div class="btns"><a class="btn" href="https://github.com/Nisha1321" target="_blank" rel="noopener">View code</a></div>
     </article>
   </section>
-
+ 
   <section class="block">
     <h2>Case study · Security evaluation</h2>
     <article class="case">
@@ -322,13 +335,13 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       <div class="btns"><a class="btn" href="https://github.com/Nisha1321/sandbox-escape-finder" target="_blank" rel="noopener">View code</a></div>
     </article>
   </section>
-
+ 
   <section class="block">
     <h2>What I want to work on next</h2>
     <p class="quote">How do we know an LLM system is working, and how do we catch it when the evaluation itself is misleading?</p>
     <p class="lede">I'm currently exploring language bias in multilingual retrieval and failure modes of retrieval-augmented systems, with a focus on evaluation methods that hold up across languages and domains.</p>
   </section>
-
+ 
   <section class="block">
     <h2>Relevant coursework</h2>
     <ul class="coursework">
@@ -343,7 +356,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     </ul>
   </section>
 </div>
-
+ 
 <div class="view" id="v-engineering" hidden>
   <div class="page-head">
     <p class="eyebrow lav">Engineering</p>
@@ -351,7 +364,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     <p class="lede">I've built real-time messaging at scale, a facial-recognition access system, and AI products from the database up. Looking for SWE internships and full-time roles.</p>
     <div class="btns"><a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download resume</a></div>
   </div>
-
+ 
   <section class="block">
     <h2>Experience</h2>
     <div class="jobs">
@@ -381,7 +394,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       </div>
     </div>
   </section>
-
+ 
   <section class="block">
     <h2>Projects</h2>
     <div class="projects">
@@ -426,7 +439,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       </article>
     </div>
   </section>
-
+ 
   <section class="block">
     <h2>Skills</h2>
     <div class="skills">
@@ -439,14 +452,14 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     </div>
   </section>
 </div>
-
+ 
 <div class="view" id="v-about" hidden>
   <div class="page-head">
     <p class="eyebrow">About</p>
     <h1>A bit more about me</h1>
     <p class="lede">I studied computer engineering in India, then worked as a backend engineer before coming to George Mason for my master's. Building production systems taught me how often software looks fine until you measure it, and that's what pulled me toward research on LLM reliability. I'm looking for work that answers a real question and also solves a real-world problem.</p>
   </div>
-
+ 
   <section class="block">
     <h2>Education</h2>
     <div class="edu">
@@ -454,7 +467,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       <div class="edu-card"><p class="eyebrow">2020 – 2024</p><h3>B.E. Computer Engineering</h3><p class="meta">CVM University, India</p><p class="gpa">CGPA 9.04 / 10</p></div>
     </div>
   </section>
-
+ 
   <section class="block">
     <h2>Earlier projects</h2>
     <div class="mini">
@@ -464,7 +477,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
       <div class="mini-card"><span class="orb purple" aria-hidden="true"></span><div><h4>Twitter data analysis</h4><p>Exploratory analysis of sentiment and engagement, presented as Power BI dashboards.</p></div></div>
     </div>
   </section>
-
+ 
   <section class="block">
     <h2>Certifications</h2>
     <div class="certs">
@@ -484,9 +497,9 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     </div>
   </section>
 </div>
-
+ 
 </main>
-
+ 
 <footer>
   <div class="wrap">
     <div style="display:flex;flex-direction:column;gap:6px;">
@@ -502,7 +515,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     </div>
   </div>
 </footer>
-
+ 
 <script>
 (function () {
   var views = ["home", "research", "engineering", "about"];
@@ -517,7 +530,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
   }
   window.addEventListener("hashchange", show);
   show();
-
+ 
   var ok = document.getElementById("copied");
   document.getElementById("copy").addEventListener("click", function () {
     var el = document.getElementById("email");
@@ -525,9 +538,9 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
     function select() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
     try { navigator.clipboard.writeText(el.textContent).then(done, select); } catch (e) { select(); }
   });
-
+ 
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
+ 
   var cv = document.getElementById("space"), ctx = cv.getContext("2d");
   var W, H, dpr, ps = [], mx = 0, my = 0;
   function size() {
@@ -565,7 +578,7 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
   addEventListener("scroll", function () { if (reduce) draw(0); }, { passive: true });
   size();
   if (reduce) draw(0); else requestAnimationFrame(draw);
-
+ 
   if ("IntersectionObserver" in window && !reduce) {
     var sel = ".hero > *, .fact, .path, .page-head > *, section.block > h2, .interest, .case-top, .metrics, .finding, .quote, .job, .proj, .skill, .edu-card, .mini-card, .cert, .coursework li";
     var io = new IntersectionObserver(function (es) {
@@ -579,5 +592,8 @@ footer h2 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.02em; }
   }
 })();
 </script>
-
-</body></html>
+ 
+</body>
+</html>
+ 
+Claude finished the response
